@@ -1,0 +1,20 @@
+:root{--bg:#0a0a18;--card:#10102a;--card2:#14143a;--line:rgba(139,124,246,.2);--tx:#f1f1ff;--mu:#8587a8;--ac:#00e5ff;--pu:#8b7cf6;--pk:#d78af6;--bad:#ff5d7a;--warn:#fbbf24;--ok:#34d399;--grad:linear-gradient(135deg,#7c6cf6,#d78af6);--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-family:'Tajawal',system-ui,sans-serif}
+body{background:var(--bg);color:var(--tx);min-height:100vh;line-height:1.6}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+button{cursor:pointer;border:0;transition:transform .15s,box-shadow .2s}
+.hidden{display:none!important}
+.btn{background:var(--grad);color:#fff;padding:11px 22px;border-radius:14px;font-weight:700;box-shadow:0 6px 24px rgba(124,108,246,.4)}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:rgba(255,255,255,.07);box-shadow:none}
+.btn.out{background:transparent;border:1px solid var(--line);box-shadow:none}
+.btn.sm{padding:5px 12px;font-size:13px;border-radius:10px}
+input,select{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+input:focus,select:focus{border-color:var(--pu);outline:0;box-shadow:0 0 0 3px rgba(139,124,246,.2)}
+select option{background:#10102a}
+label{display:block;font-size:13px;color:var(--mu);margin:12px 0 5px}
+.err{color:var(--bad);font-size:13px;margin-top:10px;min-height:18px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.muted{color:var(--mu);font-size:13px}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مذاكرتي | لوحة التحكم</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<section id="auth" class="hidden">
+  <div class="hero">
+    <h1>يومك كله في مكان واحد.</h1>
+    <p>اعمل جدولك الأسبوعي بنفسك، سجّل مهامك، ذاكر بمؤقت التركيز، وولي أمرك يوصله تقريرك على واتساب.</p>
+    <div class="mini" aria-hidden="true">
+      <div>٤:٠٠ م<span style="background:#2dd4bf">رياضيات</span></div>
+      <div>٦:٠٠ م<span style="background:#fbbf24">فيزياء</span></div>
+      <div>٨:٠٠ م<span style="background:#a5b4fc">لغة عربية</span></div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="card">
+      <div class="tabs"><button id="tLogin" class="on">دخول</button><button id="tSign">حساب جديد</button></div>
+      <form id="authForm">
+        <div id="signFields" class="hidden">
+          <label for="aName">اسم الطالب</label><input id="aName" autocomplete="name">
+          <div class="g2">
+            <div><label for="aGrade">الصف الدراسي</label>
+              <select id="aGrade"><option>الصف الأول الإعدادي</option><option>الصف الثاني الإعدادي</option><option>الصف الثالث الإعدادي</option><option>الصف الأول الثانوي</option><option>الصف الثاني الثانوي</option><option>الصف الثالث الثانوي</option><option>جامعي</option></select></div>
+            <div><label for="aPName">اسم ولي الأمر</label><input id="aPName"></div>
+          </div>
+          <label for="aPPhone">رقم واتساب ولي الأمر</label><input id="aPPhone" inputmode="tel" placeholder="01xxxxxxxxx" dir="ltr">
+        </div>
+        <label for="aEmail">البريد الإلكتروني</label><input id="aEmail" type="email" dir="ltr" autocomplete="email" required>
+        <label for="aPass">كلمة المرور</label><input id="aPass" type="password" dir="ltr" minlength="6" autocomplete="current-password" required>
+        <div class="err" id="authErr" role="alert"></div>
+        <button class="btn" style="width:100%;margin-top:8px" id="authBtn">دخول</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="app" class="hidden">
+  <aside>
+    <div class="logo">🎓 مذاكرتي</div>
+    <button class="nav on" data-v="home"><span>▦</span>الرئيسية</button>
+    <button class="nav" data-v="schedule"><span>🗓</span>الجدول</button>
+    <button class="nav" data-v="tasks"><span>☰</span>المهام</button>
+    <button class="nav" data-v="focus"><span>⏱</span>التركيز</button>
+    <button class="nav" data-v="report"><span>💬</span>تقرير الأهل</button>
+    <button class="nav out" id="logout" style="margin-top:auto">تسجيل الخروج</button>
+  </aside>
+  <main id="view"></main>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/router.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/home.js"></script>
+<script src="js/schedule.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/focus.js"></script>
+<script src="js/report.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

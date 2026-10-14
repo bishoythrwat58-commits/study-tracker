@@ -1,0 +1,80 @@
+.card2,.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.ch h3{font-size:18px;font-weight:800;display:flex;gap:8px;align-items:center}
+.ch h3 i{font-style:normal;color:var(--ac)}
+.ch span{color:var(--mu);font-size:13px;font-weight:700}
+.qa{display:flex;gap:10px;margin-bottom:14px}
+.qa input{flex:1}.qa .btn{width:56px;padding:0;font-size:24px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}.row .grow{flex:1;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.empty{text-align:center;color:var(--mu);padding:34px 0}
+.chk{width:24px;height:24px;border-radius:8px;border:2px solid var(--mu);background:none;flex:none;color:#fff;font-weight:700;line-height:1}
+.chk.on{background:var(--grad);border-color:transparent}
+.done .t{text-decoration:line-through;color:var(--mu)}
+.tag{font-size:12px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.07);color:var(--mu)}
+.p-high{color:var(--bad)}.p-medium{color:var(--warn)}.p-low{color:var(--ok)}
+.timer{text-align:center}
+.chips{display:flex;gap:6px;justify-content:center;margin-bottom:4px}
+.chips button{background:rgba(255,255,255,.05);color:var(--mu);padding:4px 12px;border-radius:20px;font-size:12px}
+.chips button.on{background:var(--grad);color:#fff}
+.ring{width:230px;height:230px;margin:6px auto;filter:drop-shadow(0 0 22px rgba(139,124,246,.45))}
+.ring .tt{fill:var(--tx);font-weight:800;font-size:25px}.ring .ts{fill:var(--mu);font-size:7px}
+.tb{display:flex;gap:12px;justify-content:center;margin-top:6px}
+.chart{width:100%;height:auto;display:block}
+.xl{display:flex;justify-content:space-between;direction:ltr;font-size:12px;color:var(--mu);padding:6px 34px 0 12px}
+.exam{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.exam .grow{flex:1;font-weight:700}
+.cd{font-weight:800;font-size:15px;color:var(--bad)}.cd.ok{color:var(--ac)}
+.mf{display:grid;grid-template-columns:1.3fr 1fr auto;gap:8px;margin-top:14px}
+.add{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:8px;margin-bottom:16px;align-items:center}
+.filters{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.filters button{background:rgba(255,255,255,.05);color:var(--mu);padding:7px 18px;border-radius:20px;font-size:13px}
+.filters button.on{background:var(--grad);color:#fff;font-weight:700}
+.week{display:grid;grid-template-columns:repeat(7,minmax(135px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;min-height:280px}
+.day.today{border-color:var(--ac);box-shadow:0 0 24px rgba(0,229,255,.15)}
+.day h4{font-size:14px;margin-bottom:10px}
+.blk{border-radius:12px;padding:9px 11px;margin-bottom:8px;color:#06141f;font-size:13px;font-weight:700;position:relative}
+.blk small{display:block;font-weight:500;opacity:.8}
+.blk button{position:absolute;left:6px;top:4px;background:none;color:#06141f;font-size:17px;opacity:.6}
+.modal{position:fixed;inset:0;background:rgba(3,3,12,.75);display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--card2);border:1px solid var(--line);padding:11px 20px;border-radius:12px;z-index:20}
+@media(max-width:900px){.add{grid-template-columns:1fr 1fr}.add input:first-child{grid-column:1/-1}.mf{grid-template-columns:1fr 1fr}.mf input:first-child{grid-column:1/-1}}
+
+/* ===== تأثيرات التنقل والحركة ===== */
+.nav{position:relative;transition:background .25s,color .25s,transform .25s,border-color .25s,box-shadow .25s}
+.nav:hover{transform:translateX(-5px);background:rgba(124,108,246,.08)}
+.nav span{display:inline-block;transition:transform .3s}
+.nav:hover span{transform:scale(1.25) rotate(-8deg)}
+.nav.on::after{content:'';position:absolute;right:-18px;top:22%;bottom:22%;width:4px;border-radius:4px;background:var(--grad);box-shadow:0 0 14px var(--pu)}
+.card2,.panel,.day{transition:transform .25s,box-shadow .25s,border-color .25s}
+.card2:hover,.panel:hover{transform:translateY(-3px);border-color:rgba(139,124,246,.5);box-shadow:0 14px 40px rgba(124,108,246,.18)}
+.btn:active{transform:scale(.96)}
+.row{transition:background .2s,padding .2s}.row:hover{background:rgba(255,255,255,.03)}
+#arc{transition:stroke-dashoffset 1s linear}
+.view{transition:opacity .15s,transform .15s}
+.view.leave{opacity:0;transform:translateY(-8px) scale(.99)}
+@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.97);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{50%{transform:scale(1.35)}}
+@keyframes fade{from{opacity:0}}
+@media(prefers-reduced-motion:no-preference){
+ .view.enter>*{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+ .view.enter>*:nth-child(2){animation-delay:.04s}.view.enter>*:nth-child(3){animation-delay:.08s}
+ .view.enter>*:nth-child(4){animation-delay:.14s}.view.enter>*:nth-child(5){animation-delay:.2s}
+ .view.enter .grid>*{animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+ .view.enter .grid:nth-of-type(1)>*:nth-child(1){animation-delay:.1s}.view.enter .grid:nth-of-type(1)>*:nth-child(2){animation-delay:.2s}
+ .view.enter .grid:nth-of-type(2)>*:nth-child(1){animation-delay:.3s}.view.enter .grid:nth-of-type(2)>*:nth-child(2){animation-delay:.4s}
+ .view.enter .row,.view.enter .exam{animation:rise .5s both}
+ .view.enter .row:nth-child(2),.view.enter .exam:nth-child(2){animation-delay:.35s}
+ .view.enter .row:nth-child(3),.view.enter .exam:nth-child(3){animation-delay:.42s}
+ .view.enter .row:nth-child(4){animation-delay:.49s}
+ .view.enter .day{animation:rise .55s both}
+ .view.enter .day:nth-child(2){animation-delay:.05s}.view.enter .day:nth-child(3){animation-delay:.1s}.view.enter .day:nth-child(4){animation-delay:.15s}
+ .view.enter .day:nth-child(5){animation-delay:.2s}.view.enter .day:nth-child(6){animation-delay:.25s}.view.enter .day:nth-child(7){animation-delay:.3s}
+ .view.enter .ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.3s .45s ease forwards}
+ .view.enter .pt{animation:fade .4s 1.2s both}
+ .view.enter .ring{animation:rise .7s .15s both}
+ .chk.on{animation:pop .35s}
+}
